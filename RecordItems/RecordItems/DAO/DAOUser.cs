@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
 using RecordItems.Models;
+using RecordItems.Logging;
 
 namespace RecordItems.DAO {
     public class DAOUser : DAO {
@@ -18,6 +19,9 @@ namespace RecordItems.DAO {
                     userList.Add(new User() { Id = (int)reader["id"], Name = (string)reader["name"], Password = (string)reader["password"] });
                 }
             }
+
+            Logger.InitLogger();
+            Logger.Log.Info("Был вызван метод по созданию списка пользователей");
 
             return userList;
         }

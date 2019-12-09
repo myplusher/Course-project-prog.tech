@@ -182,3 +182,5 @@ D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\obj\D
 D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\obj\Debug\RecordItems.csproj.CopyComplete
 D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\obj\Debug\RecordItems.dll
 D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\obj\Debug\RecordItems.pdb
+D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\log4net.dll
+D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\log4net.xml

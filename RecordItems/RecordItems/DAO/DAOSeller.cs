@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
 using RecordItems.Models;
+using RecordItems.Logging;
 
 namespace RecordItems.DAO {
     public class DAOSeller : DAO {
@@ -18,6 +19,9 @@ namespace RecordItems.DAO {
                     sellerList.Add(new Seller() { Id = (int)reader["id"], Name = (string)reader["sellername"], Place = (string)reader["sellerplace"], Rate = (int)reader["sellerrate"] });
                 }
             }
+
+            Logger.InitLogger();
+            Logger.Log.Info("Был вызван метод по созданию списка поставщиков");
 
             return sellerList;
         }

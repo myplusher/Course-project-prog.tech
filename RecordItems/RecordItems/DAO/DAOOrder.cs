@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
 using RecordItems.Models;
+using RecordItems.Logging;
 
 namespace RecordItems.DAO {
     public class DAOOrder : DAO {
@@ -19,7 +20,10 @@ namespace RecordItems.DAO {
                 }
             }
 
-                return orderList;
+            Logger.InitLogger();
+            Logger.Log.Info("Был вызван метод по созданию списка заказов");
+
+            return orderList;
         }
 
     }

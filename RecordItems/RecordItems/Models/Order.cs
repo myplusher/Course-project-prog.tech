@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -13,9 +14,13 @@ namespace RecordItems.Models {
         private DateTime date;
 
         public int Id { get; set; }
+        [DisplayName("Покупатель")]
         public string User { get; set; }
+        [DisplayName("Товар")]
         public string Item { get; set; }
+        [DisplayName("Количество")]
         public int Count { get; set; }
+        [DisplayName("Дата заказа")]
         public DateTime Date { get; set; }
 
     }
