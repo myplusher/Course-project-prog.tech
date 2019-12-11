@@ -12,7 +12,8 @@ namespace RecordItems.DAO {
         public List<User> GetUsers() {
 
             List<User> userList = new List<User>();
-            connection.Open();
+            if (connection.State != System.Data.ConnectionState.Open)
+                connection.Open();
 
             using (var reader = (new MySqlCommand("SELECT * FROM user;", connection)).ExecuteReader()) {
                 while (reader.Read()) {

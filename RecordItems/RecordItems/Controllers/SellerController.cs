@@ -13,11 +13,24 @@ namespace RecordItems.Controllers {
 
         // GET: Seller
         public ActionResult Index() {
-            return View(daoSeller.GetSellers());
+            return View(DAOSeller.GetSellers());
         }
 
         public ActionResult Create() {
             return View(new Seller());
+        }
+
+        [HttpPost]
+        public ActionResult Create([Bind(Exclude = "Id")] Seller ds) {
+            try {
+                if (daoSeller.InsertSeller(ds))
+                    return RedirectToAction("Index");
+                else
+                    return RedirectToAction("Index");
+            }
+            catch {
+                return RedirectToAction("Index");
+            }
         }
     }
 }

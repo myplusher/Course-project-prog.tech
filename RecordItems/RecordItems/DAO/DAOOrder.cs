@@ -12,7 +12,8 @@ namespace RecordItems.DAO {
         public List<Order> GetOrders() {
 
             List<Order> orderList = new List<Order>();
-            connection.Open();
+            if (connection.State != System.Data.ConnectionState.Open)
+                connection.Open();
 
             using (var reader = (new MySqlCommand("SELECT * FROM database.order_view;", connection)).ExecuteReader()) {
                 while (reader.Read()) {

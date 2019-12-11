@@ -8,7 +8,7 @@ using RecordItems.DAO;
 namespace RecordItems.Controllers {
     public class HomeController : Controller {
 
-        DAOOrder daoOrder = new DAOOrder();
+        
 
         public ActionResult Index() {
             return View();
@@ -26,9 +26,6 @@ namespace RecordItems.Controllers {
             return View();
         }
 
-        public ActionResult Order() {
 
-            return View(daoOrder.GetOrders());
-        }
     }
 }
