@@ -46,5 +46,50 @@ namespace RecordItems.DAO {
             }
         }
 
+        public static Seller GetSeller(int Id) {
+            Seller seller = new Seller();
+            using (var reader = (new MySqlCommand("SELECT * FROM `seller` WHERE id = " + Id, connection)).ExecuteReader()) {
+                while (reader.Read())
+                    seller = (new Seller() {
+                        Id = (int)reader ["id"],
+                        Name = (string)reader ["sellername"],
+                        Place = (string)reader ["sellerplace"],
+                        Rate = (int)reader ["sellerrate"]
+                    });
+            }
+            return seller;
+        }
+
+        public static bool DeleteSeller(int Id) {
+            try {
+                (new MySqlCommand("DELETE FROM `seller` WHERE id = " + Id, connection)).ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e) {
+                Logger.InitLogger();
+                Logger.Log.Info("Ошибка удаления поставщика. Причина: " + e);
+                return false;
+            }
+        }
+
+        public static bool EditSeller(Seller seller) {
+            if (connection.State != System.Data.ConnectionState.Open)
+                connection.Open();
+            try {
+                (new MySqlCommand("UPDATE `seller` SET sellername = '" + seller.Name + "'," +
+                    " sellerplace = '" + seller.Place + "'," +
+                    " sellerrate = '" + seller.Rate + "' " +
+                    "WHERE Id = " + seller.Id, connection)).ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e) {
+                Logger.InitLogger();
+                Logger.Log.Info("Ошибка редактирования поставщика. Причина: " + e);
+                return false;
+            }
+        }
+
+
+
     }
 }

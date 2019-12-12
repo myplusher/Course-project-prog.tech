@@ -5,6 +5,7 @@ using System.Web;
 using MySql.Data.MySqlClient;
 using RecordItems.Models;
 using RecordItems.Logging;
+using System.Diagnostics;
 
 namespace RecordItems.DAO {
     public class DAOOrder : DAO {
@@ -17,7 +18,13 @@ namespace RecordItems.DAO {
 
             using (var reader = (new MySqlCommand("SELECT * FROM database.order_view;", connection)).ExecuteReader()) {
                 while (reader.Read()) {
-                    orderList.Add(new Order() { Id = (int)reader["id"], User = (string)reader["user"], Item = (string)reader["item"], Count = (int)reader["count"], Date = (DateTime)reader["date"] });
+                    orderList.Add(new Order() {
+                        Id = (int)reader["id"],
+                        User = (string)reader["user"],
+                        Item = (string)reader["item"],
+                        Count = (int)reader["count"],
+                        Date = (DateTime)reader["date"]
+                    });
                 }
             }
 
@@ -26,6 +33,25 @@ namespace RecordItems.DAO {
 
             return orderList;
         }
+
+        public bool InsertOrder(Order or) {
+
+            if (connection.State != System.Data.ConnectionState.Open)
+                connection.Open();
+
+            try {
+                (new MySqlCommand("INSERT INTO `database`.`order`(`user`, `item`, `count`, `date`) VALUES ('" + or.User + "','" + or.Item + "','" + or.Count + "','" + or.Date.ToString("yyyy-MM-dd") + "');", connection))
+                    .ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex) {
+                Debug.WriteLine(ex);
+
+                return false;
+            }
+        }
+
 
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using RecordItems.DAO;
@@ -32,5 +34,33 @@ namespace RecordItems.Controllers {
                 return RedirectToAction("Index");
             }
         }
+
+        public ActionResult Delete( int id) {
+            return View(DAOSeller.GetSeller(id));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection) {
+            if (ModelState.IsValid && DAOSeller.DeleteSeller(id))
+                return RedirectToAction("Index");
+            return View();
+        }
+
+        public ActionResult Details(int id) {
+            return View(DAOSeller.GetSeller(id));
+        }
+
+        public ActionResult Edit(int id) {
+            return View(DAOSeller.GetSeller(id));
+        }
+
+        [HttpPost]
+        public ActionResult Edit([Bind(Include = "Id, Name, Place, Rate")]Seller seller) {
+            if (ModelState.IsValid && DAOSeller.EditSeller(seller))
+                return RedirectToAction("Index");
+            return View();
+        }
+
+
     }
 }

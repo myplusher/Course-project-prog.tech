@@ -16,6 +16,7 @@ namespace RecordItems.Models {
         public int Id { get; set; }
         [DisplayName("Название")]
         public string Name { get; set; }
+        public int SellerId { get; set; }
         [DisplayName("Поставщик")]
         public string Seller { get; set; }
         [DisplayName("Рейтинг")]

@@ -18,7 +18,7 @@ namespace RecordItems.Controllers
         // GET: Item
         public ActionResult Index()
         {
-            return View(daoItem.GetItems());
+            return View(DAOItem.GetItems());
         }
 
         public ActionResult Item() {
@@ -28,6 +28,10 @@ namespace RecordItems.Controllers
         public ActionResult Create() {
             ViewBag.Message = DAOSeller.GetSellers();
             return View(new Item());
+        }
+
+        public ActionResult Details(int id) {
+            return View(DAOItem.GetItem(id));
         }
 
         [HttpPost]
@@ -41,6 +45,17 @@ namespace RecordItems.Controllers
             catch {
                 return RedirectToAction("Index");
             }
+        }
+
+        public ActionResult Delete(int id) {
+            return View(DAOItem.GetItem(id));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection) {
+            if (ModelState.IsValid && DAOItem.DeleteItem(id))
+                return RedirectToAction("Index");
+            return View();
         }
     }
 }
