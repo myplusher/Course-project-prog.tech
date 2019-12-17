@@ -9,11 +9,14 @@ namespace RecordItems.Controllers {
     public class HomeController : Controller {
 
         
-
         public ActionResult Index() {
+            if(User.Identity.IsAuthenticated) {
+                ViewBag.Message = User.Identity.Name;
+            }
             return View();
+            
         }
-
+        [Authorize]
         public ActionResult About() {
             ViewBag.Message = "Your application description page.";
 

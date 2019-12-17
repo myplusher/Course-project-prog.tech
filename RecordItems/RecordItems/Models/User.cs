@@ -16,6 +16,9 @@ namespace RecordItems.Models {
         public string Name { get; set; }
         [DisplayName("Пароль")]
         public string Password { get; set; }
+        [DisplayName("Роль")]
+        public string Role { get; set; }
+        public int Role_id { get; set; }
 
     }
 }

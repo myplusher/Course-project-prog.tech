@@ -14,10 +14,12 @@ namespace RecordItems.Controllers {
         DAOSeller daoSeller = new DAOSeller();
 
         // GET: Seller
+        [Authorize]
         public ActionResult Index() {
             return View(DAOSeller.GetSellers());
         }
 
+        [Authorize]
         public ActionResult Create() {
             return View(new Seller());
         }
@@ -35,6 +37,7 @@ namespace RecordItems.Controllers {
             }
         }
 
+        [Authorize]
         public ActionResult Delete( int id) {
             return View(DAOSeller.GetSeller(id));
         }
@@ -46,10 +49,12 @@ namespace RecordItems.Controllers {
             return View();
         }
 
+        [Authorize]
         public ActionResult Details(int id) {
             return View(DAOSeller.GetSeller(id));
         }
 
+        [Authorize]
         public ActionResult Edit(int id) {
             return View(DAOSeller.GetSeller(id));
         }

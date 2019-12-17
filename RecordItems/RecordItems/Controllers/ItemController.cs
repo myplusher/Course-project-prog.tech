@@ -11,25 +11,29 @@ namespace RecordItems.Controllers
     public class ItemController : Controller
     {
         DAOItem daoItem = new DAOItem();
-    
+
 
 
 
         // GET: Item
+        [Authorize]
         public ActionResult Index()
         {
             return View(DAOItem.GetItems());
         }
 
+        [Authorize]
         public ActionResult Item() {
             return View();
         }
 
+        [Authorize]
         public ActionResult Create() {
             ViewBag.Message = DAOSeller.GetSellers();
             return View(new Item());
         }
 
+        [Authorize]
         public ActionResult Details(int id) {
             return View(DAOItem.GetItem(id));
         }
@@ -47,6 +51,7 @@ namespace RecordItems.Controllers
             }
         }
 
+        [Authorize]
         public ActionResult Delete(int id) {
             return View(DAOItem.GetItem(id));
         }

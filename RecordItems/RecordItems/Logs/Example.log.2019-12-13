@@ -1,0 +1,98 @@
+2019-12-13 00:10:09,593  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:10:33,529  INFO  Ошибка редактирования поставщика. Причина: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в RecordItems.DAO.DAOSeller.EditSeller(Seller seller) в D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\DAO\DAOSeller.cs:строка 79
+2019-12-13 00:10:37,607  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:12:52,741  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:13:00,698  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:13:33,317  INFO  Ошибка редактирования поставщика. Причина: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в RecordItems.DAO.DAOSeller.EditSeller(Seller seller) в D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\DAO\DAOSeller.cs:строка 79
+2019-12-13 00:14:04,252  INFO  Ошибка редактирования поставщика. Причина: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в RecordItems.DAO.DAOSeller.EditSeller(Seller seller) в D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\DAO\DAOSeller.cs:строка 79
+2019-12-13 00:14:07,951  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:15:08,154  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:15:08,557  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:15:36,497  INFO  Ошибка редактирования поставщика. Причина: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в RecordItems.DAO.DAOSeller.EditSeller(Seller seller) в D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\DAO\DAOSeller.cs:строка 79
+2019-12-13 00:16:33,102  INFO  Ошибка редактирования поставщика. Причина: System.InvalidOperationException: Connection must be valid and open.
+   в MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   в MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в RecordItems.DAO.DAOSeller.EditSeller(Seller seller) в D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\DAO\DAOSeller.cs:строка 79
+2019-12-13 00:18:51,292  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:19:45,891  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:20:56,063  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:22:42,640  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:23:31,560  INFO  Был вызван метод по созданию списка заказов
+2019-12-13 00:24:23,212  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:24:23,381  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 00:24:41,807  INFO  Был вызван метод по созданию списка заказов
+2019-12-13 00:25:12,898  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:36:27,584  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:36:43,805  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:38:30,781  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:38:58,259  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:46:33,882  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:46:52,560  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:48:22,753  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 00:48:44,490  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:49:13,636  INFO  Ошибка удаления поставщика. Причина: MySql.Data.MySqlClient.MySqlException (0x80004005): Cannot delete or update a parent row: a foreign key constraint fails (`database`.`item`, CONSTRAINT `seller` FOREIGN KEY (`seller`) REFERENCES `seller` (`id`))
+   в MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   в MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   в MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   в MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   в MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   в RecordItems.DAO.DAOSeller.DeleteSeller(Int32 Id) в D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\DAO\DAOSeller.cs:строка 65
+2019-12-13 00:49:18,279  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:49:24,000  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:52:16,609  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:52:46,766  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:52:53,846  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 00:54:38,557  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:05:24,278  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:09:43,218  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:20:37,454  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:24:19,123  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:24:38,473  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:25:08,790  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:25:33,078  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:42:11,697  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:42:19,257  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 01:44:35,675  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:44:49,970  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:47:23,120  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:47:56,073  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:48:01,092  INFO  Был вызван метод по созданию списка заказов
+2019-12-13 01:49:07,516  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:49:12,984  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 01:49:13,964  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 01:49:23,011  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 08:57:03,910  INFO  Был вызван метод по созданию списка заказов
+2019-12-13 08:57:53,313  INFO  Был вызван метод по созданию списка поставщиков
+2019-12-13 08:57:59,883  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 08:58:11,989  INFO  Был вызван метод по созданию списка заказов
+2019-12-13 09:38:17,187  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 09:39:07,193  INFO  Был вызван метод по созданию списка заказов
+2019-12-13 09:39:11,502  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 09:39:11,626  INFO  Был вызван метод по созданию списка товаров
+2019-12-13 09:49:32,208  INFO  Был вызван метод по созданию списка заказов
+2019-12-13 09:49:48,259  INFO  Был вызван метод по созданию списка пользователей
+2019-12-13 09:49:48,371  INFO  Был вызван метод по созданию списка товаров

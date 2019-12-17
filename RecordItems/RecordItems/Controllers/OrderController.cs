@@ -11,15 +11,16 @@ namespace RecordItems.Controllers {
 
         DAOOrder daoOrder = new DAOOrder();
 
+        [Authorize]
         public ActionResult Index() {
             return View(daoOrder.GetOrders());
         }
 
-
+        [Authorize]
         public ActionResult Order() {
             return View();
         }
-
+        [Authorize]
         public ActionResult Create() {
             ViewBag.Message = DAOUser.GetUsers();
             ViewBag.Item = DAOItem.GetItems();
