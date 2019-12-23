@@ -204,6 +204,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -280,11 +283,13 @@
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
+    <Compile Include="Controllers\SupplyController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\DAOItem.cs" />
     <Compile Include="DAO\DAOOrder.cs" />
     <Compile Include="DAO\DAOSeller.cs" />
+    <Compile Include="DAO\DAOSupply.cs" />
     <Compile Include="DAO\DAOUser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -293,7 +298,9 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Models.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Seller.cs" />
+    <Compile Include="Models\Supply.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -353,6 +360,19 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\Supply\Index.cshtml" />
+    <Content Include="Views\Supply\Create.cshtml" />
+    <Content Include="Views\Home\IndexCustom.cshtml" />
+    <Content Include="Views\Order\IndexCustom.cshtml" />
+    <Content Include="Views\Order\CreateCustom.cshtml" />
+    <Content Include="Views\Order\DetailsCustom.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Item\DetailsCustom.cshtml" />
+    <Content Include="Views\Supply\IndexCustom.cshtml" />
+    <Content Include="Views\Seller\IndexCustom.cshtml" />
+    <Content Include="Views\Seller\DetailsCustom.cshtml" />
+    <Content Include="Views\Item\IndexCustom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

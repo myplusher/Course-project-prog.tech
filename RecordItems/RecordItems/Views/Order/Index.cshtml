@@ -1,10 +1,18 @@
 ﻿@model IEnumerable<RecordItems.Models.Order>
 
 @{
-    ViewBag.Title = "Заказ";
+    ViewBag.Title = "История заказов";
 }
-
-<h2>Заказ</h2>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Заказ", "Index", "Order")</li>
+        <li>@Html.ActionLink("Склад", "Index", "Item")</li>
+        <li>@Html.ActionLink("Поставщики", "Index", "Seller")</li>
+        <li>@Html.ActionLink("Пользователи", "Index", "User")</li>
+        <li>@Html.ActionLink("Поставки", "Index", "Supply")</li>
+    </ul>
+</div>
+<h2>История заказов</h2>
 
 <p>
     @Html.ActionLink("Заказать товар", "Create")
@@ -26,24 +34,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.User)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Count)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.ActionLink("Детали", "Details", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.ActionLink("Детали", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

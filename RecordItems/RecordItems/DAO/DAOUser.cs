@@ -112,7 +112,8 @@ namespace RecordItems.DAO {
                     userList = (new User() {
                         Id = (int)reader ["id"],
                         Name = (string)reader ["name"],
-                        Password = (string)reader ["password"]
+                        Password = (string)reader ["password"],
+                        Role_id = (int)reader ["type"]
                         //Role = (string)reader ["type"]
                     });
                 }

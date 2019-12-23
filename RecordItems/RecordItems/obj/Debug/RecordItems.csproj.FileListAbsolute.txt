@@ -268,3 +268,5 @@ D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\S
 D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\System.Numerics.Vectors.xml
 D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\System.Text.Encodings.Web.xml
+D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\System.Web.Providers.dll
+D:\Михуил\КП_ТП\Course-project-prog.tech\RecordItems\RecordItems\bin\System.Web.Providers.xml

@@ -26,7 +26,10 @@ namespace RecordItems.Controllers
 
                 if (user != null) {
                     FormsAuthentication.SetAuthCookie(model.Name, true);
-                    return RedirectToAction("Index", "Home");
+                    if (user.Role_id==1)
+                        return RedirectToAction("Index", "Home");
+                    if (user.Role_id==2)
+                        return RedirectToAction("IndexCustom", "Home");
                 }
                 else {
                     ModelState.AddModelError("", "Пользователя с таким логином и паролем нет");
@@ -47,7 +50,7 @@ namespace RecordItems.Controllers
                 using (UserContext db = new UserContext()) {
                     user = DAOUser.GetUserReg(u);
                 }
-                if (user == null) {
+                if (user.Name == null) {
                     DAOUser.InsertUsReg(u);
 
                     // если пользователь удачно добавлен в бд

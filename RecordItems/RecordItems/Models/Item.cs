@@ -21,7 +21,7 @@ namespace RecordItems.Models {
         public string Seller { get; set; }
         [DisplayName("Рейтинг")]
         public int Rate { get; set; }
-        [DisplayName("В наличии")]
+        [DisplayName("В количестве")]
         public int Count { get; set; }
 
     }

@@ -3,7 +3,15 @@
 @{
     ViewBag.Title = "Пользователи";
 }
-
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Заказ", "Index", "Order")</li>
+        <li>@Html.ActionLink("Склад", "Index", "Item")</li>
+        <li>@Html.ActionLink("Поставщики", "Index", "Seller")</li>
+        <li>@Html.ActionLink("Пользователи", "Index", "User")</li>
+        <li>@Html.ActionLink("Поставки", "Index", "Supply")</li>
+    </ul>
+</div>
 <h2>Пользователи системы</h2>
 
 <p>
@@ -14,25 +22,18 @@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Детали", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

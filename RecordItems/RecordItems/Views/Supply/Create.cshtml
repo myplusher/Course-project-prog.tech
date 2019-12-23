@@ -1,0 +1,74 @@
+﻿@model RecordItems.Models.Supply
+
+@{
+    ViewBag.Title = "Оформление поставки";
+}
+
+<h2>Оформление поставки</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Заполните форму</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SellerText, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SellerId" class="form-control col-md-10">
+                <option class="form-group" value="-1" selected>Выберите ... </option>
+                @foreach (var item in ((List<RecordItems.Models.Seller>)ViewBag.Message)) {
+                    <option value="@Html.DisplayFor(modelSupply => item.Id)">
+                        @Html.DisplayFor(modelSupply => item.Name)
+                    </option>
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.SellerText, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ItemText, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="ItemId" class="form-control col-md-10">
+                <option class="form-group" value="-1" selected>Выберите ... </option>
+                @foreach (var item in ((List<RecordItems.Models.Item>)ViewBag.Item)) {
+                    <option value="@Html.DisplayFor(modelSupply => item.Id)">
+                        @Html.DisplayFor(modelSupply => item.Name)
+                    </option>
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.ItemText, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.ItemText, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ItemText, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ItemText, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Count, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Count, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Count, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Оформить" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку поставок", "Index")
+</div>

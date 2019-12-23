@@ -22,6 +22,12 @@ namespace RecordItems.Controllers
             return View(DAOItem.GetItems());
         }
 
+        // GET: Item
+        [Authorize]
+        public ActionResult IndexCustom() {
+            return View(DAOItem.GetItems());
+        }
+
         [Authorize]
         public ActionResult Item() {
             return View();
@@ -35,6 +41,11 @@ namespace RecordItems.Controllers
 
         [Authorize]
         public ActionResult Details(int id) {
+            return View(DAOItem.GetItem(id));
+        }
+
+        [Authorize]
+        public ActionResult DetailsCustom(int id) {
             return View(DAOItem.GetItem(id));
         }
 

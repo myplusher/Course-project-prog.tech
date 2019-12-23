@@ -52,6 +52,29 @@ namespace RecordItems.DAO {
             }
         }
 
+        public Order GetOrder(int id) {
 
+            Order order = new Order();
+
+            if (connection.State != System.Data.ConnectionState.Open)
+                connection.Open();
+
+            using (var reader = (new MySqlCommand("SELECT * FROM database.order_view WHERE id = " + id, connection)).ExecuteReader()) {
+                while (reader.Read()) {
+                    order = (new Order() {
+                        Id = (int)reader ["id"],
+                        User = (string)reader ["user"],
+                        Item = (string)reader ["item"],
+                        Count = (int)reader ["count"],
+                        Date = (DateTime)reader ["date"]
+                    });
+                }
+            }
+
+            Logger.InitLogger();
+            Logger.Log.Info("Был вызван метод по созданию списка заказов");
+
+            return order;
+        }
     }
 }

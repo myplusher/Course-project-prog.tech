@@ -1,0 +1,53 @@
+﻿@model IEnumerable<RecordItems.Models.Supply>
+
+@{
+    ViewBag.Title = "Поставки";
+}
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Заказ", "Index", "Order")</li>
+        <li>@Html.ActionLink("Склад", "Index", "Item")</li>
+        <li>@Html.ActionLink("Поставщики", "Index", "Seller")</li>
+        <li>@Html.ActionLink("Пользователи", "Index", "User")</li>
+        <li>@Html.ActionLink("Поставки", "Index", "Supply")</li>
+    </ul>
+</div>
+<h2>История поставок</h2>
+
+<p>
+    @Html.ActionLink("Оформить поставку", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SellerText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellerText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.Id }) |
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,32 +1,28 @@
 ﻿@{
     ViewBag.Title = "Главная страница";
 }
-
-@*<div>
-    <p>
-        @Html.ActionLink("Заказ", "Order")
-    </p>
-    <p>
-        <a href="~/Views/Home/Order.cshtml">ЗАКАЗ</a>
-    </p>
-    <p>
-        @Html.ActionLink("Заккаладввмьлд", "View")
-    </p>
-</div>*@
-
-<div >
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Заказ", "Index", "Order")</li>
+        <li>@Html.ActionLink("Склад", "Index", "Item")</li>
+        <li>@Html.ActionLink("Поставщики", "Index", "Seller")</li>
+        <li>@Html.ActionLink("Пользователи", "Index", "User")</li>
+        <li>@Html.ActionLink("Поставки", "Index", "Supply")</li>
+    </ul>
+</div>
+<div>
     <h3 class="main-page">Учет расходных материалов предприятия</h3>
 </div>
 
 <div class="description">
     <p style="text-align: center;">
-        Данное приложение разработано для промышленных предприятий. 
-        Цель данного проекта - создать инструмент, позволяющий отслеживать и 
+        Данное приложение разработано для промышленных предприятий.
+        Цель данного проекта - создать инструмент, позволяющий отслеживать и
         управлять работой склада, иметь актуальную информацию о истории заказов,
         а также получать данные о пользователях программной системы.
     </p>
 </div>
 
 <div>
-    @ViewBag.Message;
+    @ViewBag.Message
 </div>

@@ -17,6 +17,11 @@ namespace RecordItems.Controllers {
         }
 
         [Authorize]
+        public ActionResult IndexCustom() {
+            return View(daoOrder.GetOrders());
+        }
+
+        [Authorize]
         public ActionResult Order() {
             return View();
         }
@@ -39,5 +44,36 @@ namespace RecordItems.Controllers {
                 return RedirectToAction("Index");
             }
         }
+
+        [Authorize]
+        public ActionResult CreateCustom() {
+            ViewBag.Message = DAOUser.GetUsers();
+            ViewBag.Item = DAOItem.GetItems();
+            return View(new Order());
+        }
+
+        [HttpPost]
+        public ActionResult CreateCustom([Bind(Exclude = "Id")] Order dor) {
+            try {
+                if (daoOrder.InsertOrder(dor))
+                    return RedirectToAction("IndexCustom");
+                else
+                    return RedirectToAction("IndexCustom");
+            }
+            catch {
+                return RedirectToAction("IndexCustom");
+            }
+        }
+
+        [Authorize]
+        public ActionResult Details(int id) {
+            return View(daoOrder.GetOrder(id));
+        }
+
+        [Authorize]
+        public ActionResult DetailsCustom(int id) {
+            return View(daoOrder.GetOrder(id));
+        }
+
     }
 }
