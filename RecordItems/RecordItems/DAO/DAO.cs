@@ -8,7 +8,9 @@ namespace RecordItems.DAO {
     public class DAO {
         public static MySqlConnection connection = new MySqlConnection("server = localhost; port=3306;username=root;password=root;database=database;");
 
-        public static MySqlConnection Connection { get; set; }
+        public MySqlConnection Connection { get; set; }
+
+      
 
     }
 }

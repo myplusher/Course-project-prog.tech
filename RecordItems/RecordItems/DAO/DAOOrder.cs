@@ -71,9 +71,6 @@ namespace RecordItems.DAO {
                 }
             }
 
-            Logger.InitLogger();
-            Logger.Log.Info("Был вызван метод по созданию списка заказов");
-
             return order;
         }
     }
